@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.timid.vibrationlightv23.MainActivity">
+
+    <!-- TOP HALF OF CONTENT-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="30dp"
+            android:textColor="#de000000" />
+
+        <TextView
+            android:text="Flash Light Duration (Seconds)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#de000000"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/duration_indicator"
+            android:layout_gravity="center_horizontal"
+            android:text="0" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/light_length_slider"/>
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Advanced Options"
+            android:layout_gravity="center_horizontal"
+            android:onClick="advancedOptions"
+            android:id="@+id/advanced_toggle"
+            android:layout_marginTop="16dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/advanced_menu">
+            <TextView
+                android:id="@+id/sensitivity_txt"
+                android:text="Vibration Sensitivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#de000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sensitivity_slider"
+                android:layout_below="@id/sensitivity_txt"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--BTM HALF OF CONTENT (the toggle button for shake detection) -->
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle Shake Detection"
+        android:onClick="toggleDetection"
+        android:layout_gravity="center|bottom"
+        android:id="@+id/toggle"
+        android:layout_marginTop="16dp" />
+    <TextView
+        android:text="Toggle between off, on, and auto."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#de000000"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:layout_marginBottom="8dp" />
+</LinearLayout>
